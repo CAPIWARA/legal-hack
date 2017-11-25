@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp --gulpfile ./build build",
-    "start": "gulp --gulpfile ./build"
+    "build": "poi build ./src",
+    "start": "poi ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,13 +24,11 @@
   ],
   "devDependencies": {
     "autoprefixer": "^7.1.6",
-    "cssnano": "^3.10.0",
-    "gulp": "^3.9.1",
-    "gulp-postcss": "^7.0.0",
-    "gulp-pug": "^3.3.0",
-    "gulp-stylus": "^2.6.0",
-    "gulp-webpack": "^1.5.0",
+    "poi": "^9.5.4",
     "postcss-css-variables": "^0.8.0",
     "postcss-nested": "^2.1.2"
+  },
+  "dependencies": {
+    "vue": "^2.5.8"
   }
 }
