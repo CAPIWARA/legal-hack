@@ -20,7 +20,7 @@
   "homepage": "https://github.com/CAPIWARA/legal-hack#readme",
   "browserslist": [
     "IE > 10",
-    "Latest 2 versions"
+    "Last 2 versions"
   ],
   "devDependencies": {
     "autoprefixer": "^7.1.6",
