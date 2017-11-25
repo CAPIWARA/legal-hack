@@ -1,3 +1,11 @@
 <template>
-  <code>kkk eae men</code>
+  <chat-container />
 </template>
+
+<script>
+  import ChatContainer from './containers/ChatContainer'
+
+  export default {
+    components: { ChatContainer }
+  }
+</script>
