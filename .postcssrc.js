@@ -4,6 +4,7 @@ module.exports = {
   plugins: {
     'autoprefixer': { browsers },
     'postcss-nested': {},
-    'postcss-css-variables': { preserve: true }
+    'postcss-css-variables': { preserve: true },
+    'postcss-color-function': {}
   }
 }

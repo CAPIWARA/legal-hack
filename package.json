@@ -25,6 +25,7 @@
   "devDependencies": {
     "autoprefixer": "^7.1.6",
     "poi": "^9.5.4",
+    "postcss-color-function": "^4.0.1",
     "postcss-css-variables": "^0.8.0",
     "postcss-nested": "^2.1.2"
   },

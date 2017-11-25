@@ -1,10 +1,12 @@
 import * as types from './types'
+import { formatTime } from '../helpers/format'
 
 const state = {
   messages: [
     {
       sender: 'bot',
-      text: 'Oi, tudo bom?'
+      text: 'Oi, tudo bom?',
+      time: formatTime(new Date())
     }
   ]
 }
@@ -24,7 +26,8 @@ const actions = {
     const messages = [
       {
         sender: 'user',
-        text: payload
+        text: payload,
+        time: formatTime(new Date())
       }
     ]
 

@@ -1,7 +1,7 @@
 <template>
   <main class="chat-container">
     <chat-messages :messages="messages" />
-    <chat-sender @send="(text) => send(text)" />
+    <chat-sender class="sender" @send="(text) => send(text)" />
   </main>
 </template>
 
@@ -22,3 +22,35 @@
   }
 </script>
 
+<style>
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    & > .sender { margin-top: auto; }
+
+    @media screen and (min-width: 769px) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 750px;
+      height: 90%;
+      border: 1px solid #ddd;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 3px 6px rgba(0,0,0, .15);
+    }
+
+    @media screen and (min-width: 1025px) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 750px;
+      height: 90%;
+      border: 1px solid #ddd;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 3px 6px rgba(0,0,0, .15);
+    }
+  }
+</style>
