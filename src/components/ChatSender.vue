@@ -1,6 +1,6 @@
 <template>
   <form class="chat-sender" @submit.prevent="submit()">
-    <textarea class="field" v-model="text"></textarea>
+    <textarea class="field" v-model="text" @keyup.enter="(event) => enter(event)"></textarea>
     <button type="submit" class="button">Enviar</button>
   </form>
 </template>
@@ -19,6 +19,12 @@
           return
         this.$emit('send', this.text)
         this.text = ''
+      },
+      enter (event) {
+        const isValid = event.code === 'Enter' && !event.shiftKey
+        if (!isValid)
+          return
+        this.submit()
       }
     }
   }

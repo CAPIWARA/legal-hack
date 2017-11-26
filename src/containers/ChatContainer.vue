@@ -1,5 +1,6 @@
 <template>
   <main class="chat-container">
+    <chat-header />
     <chat-messages :messages="messages" />
     <chat-sender class="sender" @send="(text) => send(text)" />
   </main>
@@ -10,9 +11,10 @@
   import { mapGetters, mapActions } from 'vuex'
   import ChatMessages from '../components/ChatMessages'
   import ChatSender from '../components/ChatSender'
+  import ChatHeader from '../components/ChatHeader'
 
   export default {
-    components: { ChatMessages, ChatSender },
+    components: { ChatMessages, ChatSender, ChatHeader },
     computed: mapGetters({
       messages: types.MESSAGES
     }),

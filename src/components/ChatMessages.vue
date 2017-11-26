@@ -28,7 +28,7 @@
 <style>
   .chat-messages {
     overflow: auto;
-    max-height: calc(100% - 100px);
+    max-height: calc(100% - 200px);
     padding: 20px;
   }
 
