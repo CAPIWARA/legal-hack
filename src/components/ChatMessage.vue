@@ -47,16 +47,41 @@
     border-radius: 20px;
     box-shadow: 0 3px 6px rgba(0,0,0, .15);
 
-    &.-user {
+    &.-bot {
+      border-radius: 20px 20px 0 20px;
       background-color: #ac2527;
       background-image: linear-gradient(#ac2527, #fd5954);
     }
 
-    &.-user::before {
-
+    &.-user {
+      border-radius: 0 20px 20px 20px;
+      background-color: #bbb;
     }
 
-    &.-bot { background-color: #bbb; }
+    &.-bot::after,
+    &.-user::before {
+      position: absolute;
+      border-style: solid;
+      width: 0;
+      height: 0;
+      content: '';
+    }
+
+    &.-bot::after {
+      right: -9px;
+      top: calc(100% - 19.6px);
+      border-width: 10px 19px 10px 0;
+      border-color: #0000 #fd5954 #0000 #0000;
+      transform: rotate(90deg);
+    }
+
+    &.-user::before {
+      left: -12px;
+      top: -6px;
+      border-width: 10px 19px 10px 0;
+      border-color: transparent #bbb transparent transparent;
+      transform: rotate(29deg);
+    }
 
     & > .text,
     & > .time {
