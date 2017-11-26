@@ -1,6 +1,11 @@
 <template>
   <div class="chat-messages">
-    <transition-group class="chat-messages" name="pop" tag="article">
+    <transition-group
+      class="chat-messages"
+      name="pop"
+      tag="article"
+      ref="container"
+    >
       <chat-message
         class="message"
         v-for="(message, index) in messages"
@@ -28,6 +33,14 @@
       messages: {
         type: Array,
         required: true
+      }
+    },
+    watch: {
+      messages () {
+        setTimeout(() => {
+          const container = this.$refs.container.$el
+          container.scrollIntoView({ behavior: 'smooth', block: 'end' })
+        }, 250)
       }
     }
   }
