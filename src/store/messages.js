@@ -70,6 +70,20 @@ const actions = {
         sender: 'bot'
       })
       commit(types.MESSAGES_WRITING, false)
+
+      if (/(Ótimo)/.test(response.question)) {
+        const text = 'Lembre-se: o advogado é indispensável à administração da Justiça (Art 133 - CF/88)'
+        const time = text.split(' ').length * 50
+
+        commit(types.MESSAGES_WRITING, true)
+        setTimeout(() =>{
+          commit(types.MESSAGES, {
+            text,
+            sender: 'bot'
+          })
+          commit(types.MESSAGES_WRITING, false)
+        }, time)
+      }
     }, time)
   }
 }
