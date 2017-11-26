@@ -30,6 +30,7 @@
     "postcss-nested": "^2.1.2"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "vue": "^2.5.8",
     "vuex": "^3.0.1"
   }

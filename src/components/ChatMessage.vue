@@ -42,16 +42,21 @@
   .chat-message {
     box-sizing: border-box;
     position: relative;
-    background-color: #bbb;
     margin: 0 0 18px 0;
     padding: 20px 20px 30px;
     border-radius: 20px;
     box-shadow: 0 3px 6px rgba(0,0,0, .15);
 
     &.-user {
-      background-color: #2ecc71;
-      background-image: linear-gradient(#2ecc71, color(#2ecc71, l(-10%)));
+      background-color: #ac2527;
+      background-image: linear-gradient(#ac2527, #fd5954);
     }
+
+    &.-user::before {
+
+    }
+
+    &.-bot { background-color: #bbb; }
 
     & > .text,
     & > .time {

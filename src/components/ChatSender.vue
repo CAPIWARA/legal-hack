@@ -18,6 +18,7 @@
         if (!isValid)
           return
         this.$emit('send', this.text)
+        this.text = ''
       }
     }
   }
@@ -38,6 +39,7 @@
       height: 60px;
       padding: 10px;
       border-radius: 15px 0 0 15px;
+      font-size: 14px;
       background-color: #eee;
       resize: none;
       transition: background-color .3s ease;
@@ -56,9 +58,10 @@
       font-size: 14px;
       font-weight: 300;
       color: #fff;
-      background-color: #2ecc71;
-      background-image: linear-gradient(#2ecc71, color(#2ecc71, l(-10%)));
+      background-color: #ac2527;
+      background-image: linear-gradient(#ac2527, #fd5954);
       transition: transform .3s ease;
+      cursor: pointer;
 
       &:hover {
         transform: scale(.95) translateX(-5%);
