@@ -1,6 +1,11 @@
 <template>
   <form class="chat-sender" @submit.prevent="submit()">
-    <textarea class="field" v-model="text" @keyup.enter="(event) => enter(event)"></textarea>
+    <textarea
+      class="field"
+      ref="field"
+      v-model="text"
+      @keyup.enter="(event) => enter(event)"
+    ></textarea>
     <button type="submit" class="button">Enviar</button>
   </form>
 </template>
@@ -26,6 +31,9 @@
           return
         this.submit()
       }
+    },
+    mounted () {
+      this.$refs.field.focus()
     }
   }
 </script>
