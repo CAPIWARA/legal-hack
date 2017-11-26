@@ -4,3 +4,4 @@
 export const MESSAGES = 'MESSAGES'
 export const MESSAGES_DATA = 'MESSAGES_HASH'
 export const MESSAGES_SEND = 'MESSAGES_SEND'
+export const MESSAGES_WRITING = 'MESSAGES_WRITING'

@@ -7,6 +7,7 @@ const greeting = new Date().getHours() > 18 ? 'Boa noite'
                                             : 'Bom dia'
 
 const state = {
+  isWriting: false,
   data: {
     hash: '',
     state: null,
@@ -23,7 +24,8 @@ const state = {
 
 const getters = {
   [types.MESSAGES]: (state) => state.messages,
-  [types.MESSAGES_DATA]: (state) => state.data
+  [types.MESSAGES_DATA]: (state) => state.data,
+  [types.MESSAGES_WRITING]: (state) => state.isWriting
 }
 
 const mutations = {
@@ -38,6 +40,9 @@ const mutations = {
   },
   [types.MESSAGES_DATA]: (state, payload) => {
     state.data = payload
+  },
+  [types.MESSAGES_WRITING]: (state, payload) => {
+    state.isWriting = payload
   }
 }
 
@@ -55,10 +60,17 @@ const actions = {
     })
 
     commit(types.MESSAGES_DATA, response)
-    commit(types.MESSAGES, {
-      text: response.question,
-      sender: 'bot'
-    })
+
+    const time = response.question.split(' ').length * 50
+
+    commit(types.MESSAGES_WRITING, true)
+    setTimeout(() => {
+      commit(types.MESSAGES, {
+        text: response.question,
+        sender: 'bot'
+      })
+      commit(types.MESSAGES_WRITING, false)
+    }, time)
   }
 }
 

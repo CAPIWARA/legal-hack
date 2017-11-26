@@ -1,7 +1,7 @@
 <template>
   <main class="chat-container">
     <chat-header />
-    <chat-messages :messages="messages" />
+    <chat-messages :messages="messages" :isWriting="isWriting" />
     <chat-sender class="sender" @send="(text) => send(text)" />
   </main>
 </template>
@@ -16,7 +16,8 @@
   export default {
     components: { ChatMessages, ChatSender, ChatHeader },
     computed: mapGetters({
-      messages: types.MESSAGES
+      messages: types.MESSAGES,
+      isWriting: types.MESSAGES_WRITING
     }),
     methods: mapActions({
       send: types.MESSAGES_SEND
